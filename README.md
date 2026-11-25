@@ -84,3 +84,24 @@ To run the installer tests from a checkout:
 ```bash
 bash tests/install-test.sh
 ```
+
+## How to use
+
+In any workspace, in chat enter ````/team-skills```` and all skills will apear for use.
+
+It is recommended to point to specific skills for more accurate results.
+
+#### Example 1
+Use the qa-sign-off skill to conduct full testing on a feature.
+
+````/team-skills-qa-sign-off conduct testing on abc-9864 openspec change````
+
+#### Example 2
+Use the infra-as-code skill to build an AWS native resource.
+
+````/team-skills-infra-as-code commit to the existing terraform code and build a new dynamodb table with a partition key of 'uuid' and a attribute named 'name', ask if you need more clarity, do not build until you have a clear understanding````
+
+#### Example 3
+Use the code-architecture skill to build a design pattern in code.
+
+````/team-skills-code-architecture create the scaffolding of a repository pattern with a single service to access the users table, connect to the existing MySql connectors````
