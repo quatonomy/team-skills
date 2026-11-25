@@ -21,11 +21,9 @@ assume a provider, tool, account, environment, or desired architecture.
 3. For consequential choices, present practical options and trade-offs, recommend
    an approach, and obtain the engineer's decision. Reuse existing patterns and
    avoid speculative modules or provider-specific assumptions.
-4. Make changes only within the requested scope. Use existing checks and tests;
-   follow the [TDD skill](../test-driven-development/SKILL.md) for behaviour
-   changes, including its process for exceptions. Use formatting, validation,
-   static analysis, and isolated tests where suitable. Explain when a check
-   cannot verify real infrastructure behaviour.
+4. Make changes only within the requested scope. Use existing checks and tests,
+   formatting, validation, static analysis, and isolated tests where suitable.
+   Explain when a check cannot verify real infrastructure behaviour.
 5. Before accessing remote state or cloud environments, running a plan that
    connects to them, or applying, importing, migrating, or destroying resources,
    agree on the exact target, credentials, scope, and potentially visible effects

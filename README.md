@@ -1,7 +1,7 @@
 # Team skills
 
-Shared skills for developers using GitHub Copilot and Claude Code on macOS.
-Install them once to make them available across your workspaces.
+Shared skills and instructions for developers using GitHub Copilot and Claude
+Code on macOS. Install them once to make them available across your workspaces.
 
 ## Install or update
 
@@ -27,7 +27,8 @@ curl -fsSL https://raw.githubusercontent.com/quatonomy/team-skills/main/install.
 ```
 
 Re-run your chosen command to update. If you have installed both, use `both`
-to reconcile both locations, including newly added or removed skills. You can
+to reconcile both locations, including newly added or removed skills and
+instructions. You can
 inspect [install.sh](./install.sh) before running a command that downloads and
 executes it.
 
@@ -35,7 +36,8 @@ executes it.
 
 Installation also registers a per-user macOS LaunchAgent. Once a day while you
 are logged in, it checks whether 30 days have passed since each selected
-installation's last successful update. If so, it updates the selected skills;
+installation's last successful update. If so, it updates the selected skills
+and instructions;
 when you install Copilot and Claude separately, both are tracked. A missed check
 can run after your Mac wakes. The check does not force an update before skills
 are used and cannot update while your Mac is off or you are logged out.
@@ -61,23 +63,49 @@ the empty `~/.local/share/team-skills-state/install.lock` directory before
 retrying.
 
 The installer clones the public repository to `~/.local/share/team-skills`
-and links each skill into `~/.copilot/skills`, `~/.claude/skills`, or both.
-The links share the same checkout, so updates to existing skills are visible
-to both tools even when only one location is selected.
+and links skills and instructions into the selected tool's user directories:
 
-Your existing personal skills are left alone. If a skill with the same name
-already exists and is not a link managed by this installer, installation stops
-and reports the conflict; move or rename it before retrying. Removed upstream
-skills have their installer-managed links removed from the selected locations.
+| Target | Skills | Instructions |
+| --- | --- | --- |
+| Copilot | `~/.copilot/skills` | `~/.copilot/instructions` |
+| Claude Code | `~/.claude/skills` | `~/.claude/rules` |
+
+The links share the same checkout, so updates to existing files are visible to
+both tools even when only one location is selected.
+
+Your existing personal skills and instructions are left alone. If a file or
+skill with the same name already exists and is not a link managed by this
+installer, installation stops and reports the conflict; move or rename it
+before retrying. Removed upstream files and skills have their installer-managed
+links removed from the selected locations. The former TDD skill link is removed
+when its selected target is reconciled.
 
 Updates require a clean checkout on `main` with the original remote and only
 fast-forward changes. If you have edited the checkout or changed its Git
 configuration, resolve that before retrying. The checkout is updated before
-checking for skill-name conflicts, so its existing links may already reflect
+checking for name conflicts, so its existing links may already reflect
 the update if a conflict is reported.
 
-The repository currently distributes skills only; shared instructions may be
-added later.
+After these changes are published, existing users should re-run their install
+command to pick up the updated installer and reconcile instructions immediately.
+When both targets were installed separately, use `both` to reconcile both.
+
+## Instructions
+
+- [Test-driven development](./instructions/team-skills-test-driven-development.instructions.md)
+  describes the expected red, green, refactor workflow for behaviour changes.
+  It applies to all files in Copilot and is a general user rule in Claude Code.
+- [TypeScript standards](./instructions/team-skills-typescript.instructions.md)
+  apply to TypeScript and TSX files, including `.mts` and `.cts`.
+
+Copilot applies these instructions when working with matching files; Claude
+loads the TDD rule generally and the TypeScript rule when working with matching
+files. Discovery and application depend on the tool, harness, and settings;
+instructions guide the agent rather than guaranteeing compliance. Start a new
+session after installation and check the tool's customization or debug view to
+confirm they are being loaded. These user-level instructions apply across
+projects and may conflict with project-specific instructions; resolve any
+conflicts rather than assuming a precedence order.
 
 To run the installer tests from a checkout:
 

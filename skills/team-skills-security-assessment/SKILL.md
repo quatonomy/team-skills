@@ -20,7 +20,6 @@ and decisions with the engineer.
    vulnerabilities from hypotheses and missing evidence. Propose proportionate
    mitigations and security tests, with trade-offs and residual risks.
 4. Agree on next steps with the engineer. Do not make edits unless requested.
-   For behaviour changes, follow the [TDD skill](../test-driven-development/SKILL.md).
    Do not run intrusive tests, use real credentials, or target external
    systems without explicit authorisation and an agreed safe scope.
 5. Report what was examined and verified, any blockers, and what remains

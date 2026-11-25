@@ -28,6 +28,8 @@ remote="https://github.com/quatonomy/team-skills.git"
 repo="$HOME/.local/share/team-skills"
 copilot="$HOME/.copilot/skills"
 claude="$HOME/.claude/skills"
+copilot_instructions="$HOME/.copilot/instructions"
+claude_instructions="$HOME/.claude/rules"
 state="$HOME/.local/share/team-skills-state"
 agent="$HOME/Library/LaunchAgents/com.quatonomy.team-skills-update.plist"
 label="com.quatonomy.team-skills-update"
@@ -148,6 +150,10 @@ if [ "$found" -eq 0 ]; then
   echo "Error: no skills with SKILL.md found in $repo/skills." >&2
   exit 1
 fi
+if [ ! -d "$repo/instructions" ]; then
+  echo "Error: $repo/instructions is missing." >&2
+  exit 1
+fi
 
 check_destination() {
   destination=$1
@@ -190,17 +196,62 @@ install_destination() {
   echo "Skills installed in $destination"
 }
 
+check_instruction_destination() {
+  destination=$1
+  if [ -e "$destination" ] && [ ! -d "$destination" ]; then
+    echo "Error: $destination is not a directory." >&2
+    return 1
+  fi
+  for instruction in "$repo"/instructions/*.instructions.md; do
+    [ -f "$instruction" ] || continue
+    name=${instruction##*/}
+    link="$destination/$name"
+    if [ -e "$link" ] || [ -L "$link" ]; then
+      if [ ! -L "$link" ] || [ "$(readlink "$link")" != "$instruction" ]; then
+        echo "Error: $link already exists and is not managed by this installer." >&2
+        return 1
+      fi
+    fi
+  done
+}
+
+install_instruction_destination() {
+  destination=$1
+  mkdir -p "$destination"
+  for instruction in "$repo"/instructions/*.instructions.md; do
+    [ -f "$instruction" ] || continue
+    name=${instruction##*/}
+    link="$destination/$name"
+    if [ ! -L "$link" ]; then
+      ln -s "$instruction" "$link"
+    fi
+  done
+  for link in "$destination"/*.instructions.md; do
+    [ -L "$link" ] || continue
+    name=${link##*/}
+    instruction="$repo/instructions/$name"
+    if [ "$(readlink "$link")" = "$instruction" ] && [ ! -f "$instruction" ]; then
+      rm "$link"
+    fi
+  done
+  echo "Instructions installed in $destination"
+}
+
 if [ "$target" = copilot ] || [ "$target" = both ]; then
   check_destination "$copilot"
+  check_instruction_destination "$copilot_instructions"
 fi
 if [ "$target" = claude ] || [ "$target" = both ]; then
   check_destination "$claude"
+  check_instruction_destination "$claude_instructions"
 fi
 if [ "$target" = copilot ] || [ "$target" = both ]; then
   install_destination "$copilot"
+  install_instruction_destination "$copilot_instructions"
 fi
 if [ "$target" = claude ] || [ "$target" = both ]; then
   install_destination "$claude"
+  install_instruction_destination "$claude_instructions"
 fi
 
 now=$(date +%s)

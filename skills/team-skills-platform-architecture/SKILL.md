@@ -30,8 +30,7 @@ a cloud provider, platform product, or need for a new abstraction.
    [infra-as-code skill](../infra-as-code/SKILL.md) and
    [CI/CD skill](../ci-cd/SKILL.md) for relevant implementation work, and the
    [security assessment skill](../security-assessment/SKILL.md) when assessing
-   security risks. Follow the [TDD skill](../test-driven-development/SKILL.md)
-   for behaviour changes and its process for exceptions.
+   security risks.
 6. Obtain explicit approval before accessing or changing shared or production
    systems or performing externally visible operations. Report decisions,
    evidence, checks, unresolved questions, and risks; do not claim unverified

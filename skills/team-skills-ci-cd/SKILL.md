@@ -21,9 +21,7 @@ environment.
 3. Present options and trade-offs for consequential pipeline or deployment
    changes and obtain the engineer's decision. Prefer existing project tools and
    conventions; avoid adding stages, services, or abstractions without a need.
-4. Make changes only within the requested scope. Follow the
-   [TDD skill](../test-driven-development/SKILL.md) for behaviour changes,
-   including its process for exceptions. Run the smallest relevant existing
+4. Make changes only within the requested scope. Run the smallest relevant existing
    workflow checks, linters, or safe local equivalents; distinguish local
    validation from an actual hosted pipeline or deployment.
 5. Obtain explicit approval before triggering workflows with external or

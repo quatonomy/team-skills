@@ -6,8 +6,7 @@ description: "Use when designing, writing, running, or diagnosing Bruno API requ
 # Bruno API testing
 
 Work from the engineer's stated intent and the relevant codebase, not OpenSpec
-artifacts. Follow the [TDD skill](../test-driven-development/SKILL.md) for
-behaviour changes, including observing the intended failure before implementing.
+artifacts.
 
 1. Identify the API behaviour and choose valuable success, validation,
    authorisation, and error scenarios for the relevant risk. Discuss when a

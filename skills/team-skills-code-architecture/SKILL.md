@@ -24,7 +24,5 @@ solution, not as rules that force patterns or abstractions.
 4. Define clear contracts and validate untrusted data at boundaries. Follow
    language and project conventions unless a deviation is justified and agreed.
    Keep implementation changes within the request.
-5. Follow the [TDD skill](../test-driven-development/SKILL.md) for behaviour
-   changes and establish a passing baseline for behaviour-preserving refactoring.
-   Explain decisions, relevant checks, and any unresolved risks; do not claim
+5. Explain decisions, relevant checks, and any unresolved risks; do not claim
    guarantees beyond the available evidence.

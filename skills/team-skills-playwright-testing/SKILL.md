@@ -6,9 +6,7 @@ description: "Use when designing, writing, running, or diagnosing Playwright bro
 # Playwright testing
 
 Work from the engineer's stated intent and the relevant codebase, not OpenSpec
-artifacts. Follow the [TDD skill](../test-driven-development/SKILL.md) for
-behaviour changes; writing a browser test does not exempt a change from red,
-green, and refactor.
+artifacts.
 
 1. Identify the user-visible behaviour, risk, and whether a browser test adds
    confidence beyond a smaller test. Agree on meaningful scenarios, including

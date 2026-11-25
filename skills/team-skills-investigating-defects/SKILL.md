@@ -18,10 +18,7 @@ artifacts. Do not change code or tests unless the engineer requests it.
    checks. Distinguish facts from assumptions and update the engineer when
    material uncertainty or a consequential choice arises.
 4. Once the intended behaviour and likely cause are understood, propose a
-   focused regression test and a root-cause fix. Follow the
-   [TDD skill](../test-driven-development/SKILL.md): observe the test fail
-   for the defect before implementing the fix, then confirm it passes.
-   If reproduction or the red step is blocked, stop and follow its exception
-   process rather than silently proceeding.
+   focused regression test and a root-cause fix. If reproduction is blocked,
+   report the blocker rather than silently proceeding.
 5. Report the evidence, root cause or remaining uncertainty, checks and actual
    results, and any unverified impact. Avoid unrelated changes.
