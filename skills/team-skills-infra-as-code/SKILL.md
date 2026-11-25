@@ -1,5 +1,5 @@
 ---
-name: infra-as-code
+name: team-skills-infra-as-code
 description: "Use when designing, reviewing, implementing, or troubleshooting infrastructure as code, including Terraform, OpenTofu, Pulumi, Bicep, CloudFormation, infrastructure modules, state, drift, and plans."
 ---
 

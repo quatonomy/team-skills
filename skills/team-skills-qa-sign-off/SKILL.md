@@ -1,5 +1,5 @@
 ---
-name: qa-sign-off
+name: team-skills-qa-sign-off
 description: "Use when explicitly requested to prepare and run local QA sign-off for a selected OpenSpec change, recording traceable test cases, results, and evidence."
 argument-hint: "OpenSpec change name and approved local test environment"
 disable-model-invocation: true

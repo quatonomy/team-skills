@@ -1,5 +1,5 @@
 ---
-name: bruno-api-testing
+name: team-skills-bruno-api-testing
 description: "Use when designing, writing, running, or diagnosing Bruno API requests, collections, and automated assertions."
 ---
 

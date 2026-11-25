@@ -1,5 +1,5 @@
 ---
-name: code-architecture
+name: team-skills-code-architecture
 description: "Use when discussing, designing, implementing, or refactoring software architecture, code boundaries, and software design."
 ---
 

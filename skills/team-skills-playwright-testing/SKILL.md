@@ -1,5 +1,5 @@
 ---
-name: playwright-testing
+name: team-skills-playwright-testing
 description: "Use when designing, writing, running, or diagnosing Playwright browser and user-facing feature tests."
 ---
 

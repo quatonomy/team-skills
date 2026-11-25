@@ -1,5 +1,5 @@
 ---
-name: investigating-defects
+name: team-skills-investigating-defects
 description: "Use when investigating a bug, unexpected behaviour, regression, error, or failing test and guiding a root-cause fix."
 ---
 

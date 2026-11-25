@@ -1,5 +1,5 @@
 ---
-name: test-driven-development
+name: team-skills-test-driven-development
 description: "Use when implementing or guiding behaviour changes with test-driven development, including choosing and running unit, feature, or integration tests."
 ---
 

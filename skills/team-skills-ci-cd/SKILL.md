@@ -1,5 +1,5 @@
 ---
-name: ci-cd
+name: team-skills-ci-cd
 description: "Use when designing, implementing, reviewing, or troubleshooting CI/CD, build pipelines, GitHub Actions, deployment workflows, release automation, or pipeline failures."
 ---
 

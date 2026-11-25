@@ -1,5 +1,5 @@
 ---
-name: security-assessment
+name: team-skills-security-assessment
 description: "Use when assessing security risks in a design, implementation, API, authentication, data handling, or code change."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: platform-architecture
+name: team-skills-platform-architecture
 description: "Use when designing or evaluating platform engineering, cloud services, developer platforms, deployment platforms, golden paths, self-service infrastructure, or platform abstractions."
 ---
 
